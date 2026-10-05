@@ -44,7 +44,7 @@ public final class AccessManager {
             if (b64 == null) return false;
             byte[] proof = Base64.decode(b64, Base64.DEFAULT);
             return proof.length == 32 && matches(proof);
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
             return false;
         }
     }
