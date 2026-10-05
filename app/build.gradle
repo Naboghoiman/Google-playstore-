@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.djiman.bugobi.advance34'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.djiman.bugobi.advance34'
+        minSdk 26
+        targetSdk 35
+        versionCode 34100
+        versionName '3.4-native-port'
+
+        externalNativeBuild {
+            cmake {
+                cppFlags '-std=c++20 -O3 -ffast-math -fno-exceptions'
+                cFlags '-O3 -ffast-math'
+                arguments '-DANDROID_STL=c++_shared'
+            }
+        }
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging false
+        }
+        resources {
+            excludes += ['META-INF/LICENSE*', 'META-INF/NOTICE*']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

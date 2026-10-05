@@ -1,0 +1,687 @@
+{
+  "project": "DJ IMAN 3.4 pure native Android port",
+  "generated_utc": "2026-10-05T11:55:00Z",
+  "file_count": 136,
+  "files": [
+    {
+      "path": "LAME_COPYING",
+      "bytes": 25284,
+      "sha256": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd"
+    },
+    {
+      "path": "LAME_NOTICE.txt",
+      "bytes": 896,
+      "sha256": "71d391a5b11bc5513f8a653e25d80fb8d30f585209c32e9a73a7546532bdd922"
+    },
+    {
+      "path": "NATIVE_PORT_STATUS.md",
+      "bytes": 5205,
+      "sha256": "0583f514c2563b1b68730d5715113652b0158f0a01b144df52efb8699744fcab"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2624,
+      "sha256": "0256ab0ed4bcbdd976e5d036584064afc4c92e00f09f84d08d0faa3cf1df8029"
+    },
+    {
+      "path": "app/build.gradle",
+      "bytes": 1122,
+      "sha256": "3ea222883c771acbb0b8e106c6feb4d87c34e0cd7e2c0ae2243e9b9518e3b928"
+    },
+    {
+      "path": "app/proguard-rules.pro",
+      "bytes": 68,
+      "sha256": "8f416f93c970e67508682a049bf47ccc0c0729a99e6b8cef0ca4082300c4144b"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "bytes": 1452,
+      "sha256": "019f361f0edec11a59e28cc7c07d3d4c8bba130a452734814b422224edd52282"
+    },
+    {
+      "path": "app/src/main/cpp/CMakeLists.txt",
+      "bytes": 1171,
+      "sha256": "91a9f1d79d1d2d89a62ab44f74119fd220484449d5f8da59fb5af9b43b7cf8ae"
+    },
+    {
+      "path": "app/src/main/cpp/config.h",
+      "bytes": 1305,
+      "sha256": "81272feaef0b539382b6d289a2be69e3877f603123e88d506bd34dac7a10a41d"
+    },
+    {
+      "path": "app/src/main/cpp/lame/include/lame.h",
+      "bytes": 50005,
+      "sha256": "ed6938bf791025d42b1b398206b015aebd8f2e74822e17df62c45139a3082aa6"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/VbrTag.c",
+      "bytes": 31565,
+      "sha256": "3221f46f928f9735d91a0a1ea2242fe45af2b00248c4f23b990a518241a79b4c"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/VbrTag.h",
+      "bytes": 2929,
+      "sha256": "69f6de79f3e689ab794bcd04d23b3eda202311b690bf1b02ff485520d351b7e2"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/bitstream.c",
+      "bytes": 36059,
+      "sha256": "0797335758ecff0e43c1142e2773659d7a1f913def13fc93d7c87633cff4d487"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/bitstream.h",
+      "bytes": 1563,
+      "sha256": "5c6bfb039c70ce1696782a53dae3255f462c49102d639c37c3a774c5d2c0d08a"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/encoder.c",
+      "bytes": 18488,
+      "sha256": "24846401580ae8480ff5c02363955ad88e9460f7c26cf5e02db1bef183f17266"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/encoder.h",
+      "bytes": 4096,
+      "sha256": "e959801ad6fab370ad48245d91fd3fc4385d12ab7cfc743d4ea760a711af7517"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/fft.c",
+      "bytes": 9895,
+      "sha256": "5148c76c02607dfd285a71da2ffec64cbdae293c450ac84bdd442a032d94eea1"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/fft.h",
+      "bytes": 1227,
+      "sha256": "cadfc3c5d7ecb556d5f5829e28a7b0830a35478afb86ce0a01d83f3cdf977c4e"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/gain_analysis.c",
+      "bytes": 20282,
+      "sha256": "8b3fe4970fe6a19906af1573c6fdd7a51eab0599404204857d16fa55f96a83fa"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/gain_analysis.h",
+      "bytes": 4202,
+      "sha256": "e71703d716f6f99d6900ab4d1feaf91e9fe25135dd3ced66864cece7c82426be"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/id3tag.c",
+      "bytes": 53730,
+      "sha256": "57e9a768e62120bd5a11e9e13a71ea8cd5b0456e62773a4c960ca31a5047cf19"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/id3tag.h",
+      "bytes": 1804,
+      "sha256": "b78d8ebd1880fb1acd7ec6ed452e0b67555bbb6bff5a4312f5156bd1392ee6ca"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/l3side.h",
+      "bytes": 2414,
+      "sha256": "e4e60ea6b93b7cb7b90cf35ef43bfcd9c7570ff91d79c8a305e95739556d988a"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/lame-analysis.h",
+      "bytes": 3077,
+      "sha256": "3953c64ad8997796919f7c5330a0a4b229c4644ede9b6448c2d1a8d61b6da359"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/lame.c",
+      "bytes": 84665,
+      "sha256": "6ccabf1c01d1f304b3b0b7824ef31b223e4010f20f3549eec7d9852d824173cf"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/lame_global_flags.h",
+      "bytes": 8165,
+      "sha256": "94b1c899765d08e4502e4285c0fbaa7ebc61d252c2d0ceb99f21306364bdce74"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/lameerror.h",
+      "bytes": 637,
+      "sha256": "9ebb9e5f9dbfa551a189552b3b7b115e309536b0503cbcc6e6e071b077a5a256"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/machine.h",
+      "bytes": 4520,
+      "sha256": "93a4ac1d7049dcdc9e9207b8b7abb7e4fc6f637f23ec97ef8c842f610b1a8fbe"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/newmdct.c",
+      "bytes": 37074,
+      "sha256": "131c73c1eb414492221afb5c9a08bf7116d9d5a4ba1edb4ae93c19afa1a519f7"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/newmdct.h",
+      "bytes": 993,
+      "sha256": "9aa3a331f57a68ab59d83857dbb85fcf279d39177c6aae311b7442499994ae23"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/presets.c",
+      "bytes": 15592,
+      "sha256": "feb47d97b3014e201d52fa75930b02e18c18568caf6b2f9d9bb02a42a0313ec3"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/psymodel.c",
+      "bytes": 70921,
+      "sha256": "f8d921e29731b8d6ea9b9e532dd670323c36371cff8e6bcd1e5b50790bdd0274"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/psymodel.h",
+      "bytes": 2024,
+      "sha256": "1785c6e8798b3b1ce19d12af36f27f4beee5c33de5f6675074d6e2b911b97bbb"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/quantize.c",
+      "bytes": 65718,
+      "sha256": "2a006aef2d283ec59402752b9e0e54828cf89df53cd3400580953fcbb7399e93"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/quantize.h",
+      "bytes": 1556,
+      "sha256": "adc9ff50e49c948d7afcb27eb51a6ad8fdce1a764f0149136ac5f04b5899a653"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/quantize_pvt.c",
+      "bytes": 34051,
+      "sha256": "c09d9d7a422c0e8966486644bbed841defac78fc4ae80855e5508959028c20df"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/quantize_pvt.h",
+      "bytes": 4263,
+      "sha256": "e01a2362f8a13009025b72ee20114a166a06bfc18f614cabf0f3692ae84443cd"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/reservoir.c",
+      "bytes": 10211,
+      "sha256": "6e3ef02c0a5ca432021e8901c9cc40a86e8da0e14edbe1d19d459e5c8464ef92"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/reservoir.h",
+      "bytes": 1221,
+      "sha256": "410a2486d4756544ed2b10c8f432150adc166a576466dccf620927bb336fe2bf"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/set_get.c",
+      "bytes": 54144,
+      "sha256": "62fd5c2e7eaa2712f9120a37228d16fa6bbaf5308f7ac369eb65e77ab1ee0ea1"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/set_get.h",
+      "bytes": 2587,
+      "sha256": "fe2af5e1b3c18e44e8e91fd1c7fdc337770fecbf62dbc93cfd98af44b1f3cdf2"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/tables.c",
+      "bytes": 21315,
+      "sha256": "5abd5f82c92976ff875f7b94fa1db10ab0a0d70a9437c20be22d6b2e6e1becfa"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/tables.h",
+      "bytes": 2473,
+      "sha256": "826f3a189d7b20f0bcd91692f25c9447a3986fecc5e8a9c21487e4cc0862689d"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/takehiro.c",
+      "bytes": 38141,
+      "sha256": "ae10c52c34942bc5905224a8299c10e74174f30b5b6e468a60cb9293cb6f41e8"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/util.c",
+      "bytes": 25810,
+      "sha256": "4d1bff22773e5d6b1326ab9334d1b58d09c0d254b227fcfb72a0dade8f9cdc1d"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/util.h",
+      "bytes": 21928,
+      "sha256": "0497e5bc89ee1d93bd537e703cd2db14b7b0e6d934946afa4a798203fb669f6a"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/vbrquantize.c",
+      "bytes": 46669,
+      "sha256": "d69b1de5fc788c5b64f8c53c1ff97965a85ed924f7b7a34a2b12fcd3ac2a8fb4"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/vbrquantize.h",
+      "bytes": 1072,
+      "sha256": "28f1095266c721c2870a2af8f884e815ff984557d49a47ec62854dbce9b3f24f"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/vector/lame_intrin.h",
+      "bytes": 1013,
+      "sha256": "2bb672d383f21365f3997652f86463fa28e02ed9490b7431d214bb7c1787634f"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/version.c",
+      "bytes": 6832,
+      "sha256": "5b33545cd0fb1743cc33790fbbc37a1276f0f341ea68c71ae16c0b64a5c43c75"
+    },
+    {
+      "path": "app/src/main/cpp/lame/libmp3lame/version.h",
+      "bytes": 2306,
+      "sha256": "6b59fde33ee149cd0b8ea6946b0a92dabf60ef9d77e26f65565a323ba3698b54"
+    },
+    {
+      "path": "app/src/main/cpp/native_engine.cpp",
+      "bytes": 55403,
+      "sha256": "fa6972deb509f141e4b18183891f3291307a6f1e9afc46c9e357d7cf54007f15"
+    },
+    {
+      "path": "app/src/main/cpp/native_engine.cpp.bak",
+      "bytes": 31334,
+      "sha256": "cdae4e19fbc3a2d8663d85f64582e52f94a5500d332085e69cfacb3405bfc94c"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/DjController.java",
+      "bytes": 25652,
+      "sha256": "6a956b407e7135678e62bca92872adf542a9f41048a573b6a59387a607bde75b"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/MainActivity.java",
+      "bytes": 7282,
+      "sha256": "1ec8cc6b47feaf603d0712a98c083303ae1b862d024029b53153ad702068597d"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/analysis/AutoTrim.java",
+      "bytes": 2166,
+      "sha256": "ca14ad82d4d2f8903ccde742dcc25812ffa83c98563f4499f552e983e0534235"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/analysis/BeatAnalyzer.java",
+      "bytes": 19150,
+      "sha256": "96f07d4080b13a024427d0348b9bb939423a2815a50b1b3a76b55aef1a0d7c3b"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/analysis/BeatGridMath.java",
+      "bytes": 1724,
+      "sha256": "b2d2e3e6f9fe6f2c4afdcc3b5db7696474cb375a654f286d8b6c16ee22275d80"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/analysis/GridRefiner.java",
+      "bytes": 5758,
+      "sha256": "9ce7b9b6344e981482b28b5cbf1eac843e7d1f8fde9ba4ce287d9bfc7ab5cee8"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/audio/AutoScratchController.java",
+      "bytes": 2990,
+      "sha256": "250becf05c39b42f39c4a120ffedc1f60311a5468b152fd4599de4a9c63ed8f2"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/audio/NativeDjEngine.java",
+      "bytes": 13748,
+      "sha256": "60190b830c4758354aafa52298ae3b9e6533c481dd4bb7302f9af727cb09ad7e"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/audio/SyncController.java",
+      "bytes": 10474,
+      "sha256": "1984a05104c5be02496da221bc6764707ac660991298c584f6327d40b0ca13a3"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/automix/AutomixController.java",
+      "bytes": 8288,
+      "sha256": "4df0d8731ad69ed5de0950b8da13be0636ab070a0a82a1058c1a90bf835ad52b"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/media/MediaStoreRepository.java",
+      "bytes": 2611,
+      "sha256": "61125ce44e09bab846d65ed22d1618b3645eafbf9a2da9c6dc56ea10106c466d"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/media/PcmDecoder.java",
+      "bytes": 6920,
+      "sha256": "42a14e77920ce05f6d397e8b1ae093f03459e3fa5d5d99e561c83f8ec9d8e42f"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/model/AnalysisResult.java",
+      "bytes": 1626,
+      "sha256": "06ce1661dc583c9c6a436bce85ce551a80541e3277c7cfaee0b2a8b40a1a63d3"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/model/DeckState.java",
+      "bytes": 897,
+      "sha256": "649bcc370bbcc84cb2e2aefd9b483aca1be60d882833960ddc8dbb41bd780e6b"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/model/PcmTrack.java",
+      "bytes": 445,
+      "sha256": "e3113ff2bcfb49c04fbc97a2f81db6a33be12ba2133ff111633b77d209100396"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/model/TrackInfo.java",
+      "bytes": 1486,
+      "sha256": "d9f442b4cf0384a2fc1502e1fa922847b8a3213e30bc2e78cd0e8007f69a0979"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/rhythm/RhythmController.java",
+      "bytes": 8543,
+      "sha256": "ada519aba82a0380f76fb667902c2a1df69c9c096a72ea84f865443aa8f3c6fc"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/rhythm/RhythmKit.java",
+      "bytes": 20289,
+      "sha256": "b47ed5355d8215d7088567ff9f706d8f3dc98ef938f0f0fe71c34eb4f04b4993"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/ui/AutomixDialog.java",
+      "bytes": 5483,
+      "sha256": "1c05502c33c555ddb16c647296041ba9276a94cdda72e0e17556d8b83d24c7dd"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/ui/DjMainView.java",
+      "bytes": 50987,
+      "sha256": "ad6efb37ec8970b6368fd7db5f56a3b76b89b70ac5f97803579ce5e31a195885"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/ui/LibraryDialog.java",
+      "bytes": 3411,
+      "sha256": "d949a17a56630f1671425b8cb05d2b7f3de1bec98ed2da2851ecc04114bc4d8b"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/ui/SettingsDialog.java",
+      "bytes": 2057,
+      "sha256": "efe62328685fa59b87dca6f288318c56116be84c8130c8ca3d5ea4f5a35285b7"
+    },
+    {
+      "path": "app/src/main/java/com/djiman/bugobi/advance34/util/AccessManager.java",
+      "bytes": 5308,
+      "sha256": "4bf7ae24a86c8405f122026ace290518b025375eefd00ecb5cc320689b7470fa"
+    },
+    {
+      "path": "app/src/main/res/drawable/app_icon.xml",
+      "bytes": 626,
+      "sha256": "5a9ade84e6ccc798fbd886a72be2e07fc32e6ca2ea9c133a20f9d6f0c9a36d71"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/deck_popup.png",
+      "bytes": 1896538,
+      "sha256": "3c7a1360aee751eb849ecf0dba1ccb03f6d7f261f63ace5d04e207a5adc70787"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/dynamics_board.png",
+      "bytes": 195149,
+      "sha256": "00b3cbfdea25bc82d20e6301d0314eb311dd1cd6734bb626d339507e9c8ff13f"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/groove_board.png",
+      "bytes": 262620,
+      "sha256": "866e819557082dc86a790bd94d835c51b896f5c98497d5794a281a67d44bb48b"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/looper_board.png",
+      "bytes": 354652,
+      "sha256": "124ae2b764a2768327b251b63c4a2c587e7ec599acefe6fd81a9b78d19aefaf6"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/master_eq.png",
+      "bytes": 449422,
+      "sha256": "875b7d74ac814f9544db3565d402c2190a309ada028c841b72cd9eb8560c89e3"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/master_fx.png",
+      "bytes": 419754,
+      "sha256": "5fcf9a97f44142065423c19512aa15f112404a61c1bce3f18241211f3869d02f"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/master_output.png",
+      "bytes": 398459,
+      "sha256": "7fab95498656d185d3514ccc40a8900f814401a15182578e9cb6ffcf54f6cc3c"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_cross_bg.png",
+      "bytes": 13674,
+      "sha256": "92ff3e946223cd77f7f161110279fb0a44e8d919ce515b0e3ad4c4699296d627"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_cross_cap.png",
+      "bytes": 2739,
+      "sha256": "dca1bdcb49f3bd988d4ab323fe3cbd5170d501ca7071a8411e0b9bfa80d2c394"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_fader_a_bg.png",
+      "bytes": 13686,
+      "sha256": "e6e3d304f6f3de18a35d7f37cdb5d0758e9615f6523bdb9fd5e613c94b2433b5"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_fader_a_cap.png",
+      "bytes": 3824,
+      "sha256": "915d1a3d58c416508a649639e22dcb6da408230980cf0db3f56ca78fee960ec9"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_fader_b_bg.png",
+      "bytes": 13412,
+      "sha256": "38eaef3c48bbbba742833a64c3365208180001d271979bb3288aa27bf02bc6f0"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_fader_b_cap.png",
+      "bytes": 4011,
+      "sha256": "e0261020d5491aceeefd10c4cc81e06bac14d661c618361ec92b6ad9b2c6e264"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/mixer_main.png",
+      "bytes": 1519402,
+      "sha256": "8eb2a1767382c80f271e561a2dbd59825a415cfc1eb939e493f62fd465fbdcd6"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/performance_board.png",
+      "bytes": 372461,
+      "sha256": "f7b048a0a87931a4aaa35c9d21205a0fe3d1d84e268523fd4d2f5e3611f694f9"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/premium_board.png",
+      "bytes": 1015619,
+      "sha256": "ee72daeb18bb8f9c549e183bf0229489f39ddb8a8c1c73381c0104a07d3a8dcf"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/premium_platter.png",
+      "bytes": 381102,
+      "sha256": "64bb760ee6109a06f64d186301319704fdfd03fb3fd80cb2f52756d922dd2c7f"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_01_1000413209.png",
+      "bytes": 457031,
+      "sha256": "69f2b954eb488f0bf4ab30dc884ce4f3434b0c94ff7cfb07a440f546b743685d"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_01_1000413211.png",
+      "bytes": 439077,
+      "sha256": "db504839cd66cf00a40a12a20949d7d1a8c4cf2d55a0748b0b12a0857e31b524"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_02_1000532460.png",
+      "bytes": 457031,
+      "sha256": "69f2b954eb488f0bf4ab30dc884ce4f3434b0c94ff7cfb07a440f546b743685d"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_02_1000554394.png",
+      "bytes": 449422,
+      "sha256": "875b7d74ac814f9544db3565d402c2190a309ada028c841b72cd9eb8560c89e3"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_03_1000532459.png",
+      "bytes": 439077,
+      "sha256": "db504839cd66cf00a40a12a20949d7d1a8c4cf2d55a0748b0b12a0857e31b524"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_03_1000532464.png",
+      "bytes": 422026,
+      "sha256": "a091aff1e57bda70602f551a6843fd218863370c2f8529ce0067de30cfb89844"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_04_1000413212.png",
+      "bytes": 387603,
+      "sha256": "be4a758c1c3101fd185e63e4676faea6f8b20a0520c8b7cc798e8baaf5e33693"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_04_1000532462.png",
+      "bytes": 372461,
+      "sha256": "f7b048a0a87931a4aaa35c9d21205a0fe3d1d84e268523fd4d2f5e3611f694f9"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_05_1000413206.png",
+      "bytes": 372461,
+      "sha256": "f7b048a0a87931a4aaa35c9d21205a0fe3d1d84e268523fd4d2f5e3611f694f9"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_05_1000532458.png",
+      "bytes": 387603,
+      "sha256": "be4a758c1c3101fd185e63e4676faea6f8b20a0520c8b7cc798e8baaf5e33693"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_06_1000413213.png",
+      "bytes": 398459,
+      "sha256": "7fab95498656d185d3514ccc40a8900f814401a15182578e9cb6ffcf54f6cc3c"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_07_1000554338.png",
+      "bytes": 240026,
+      "sha256": "27c0190e5b12fc30f6db6ea90949164cb15a385865e00ebec5ee0b9210cef869"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_08_1000552470.png",
+      "bytes": 425422,
+      "sha256": "dc40480a0a984fe39f0e59eb9d0b79decab48c9553eada3f01a9baae910b26f0"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_09_1000532466.png",
+      "bytes": 398459,
+      "sha256": "7fab95498656d185d3514ccc40a8900f814401a15182578e9cb6ffcf54f6cc3c"
+    },
+    {
+      "path": "app/src/main/res/drawable-nodpi/ref_10_1000552486.png",
+      "bytes": 354652,
+      "sha256": "124ae2b764a2768327b251b63c4a2c587e7ec599acefe6fd81a9b78d19aefaf6"
+    },
+    {
+      "path": "app/src/main/res/raw/privacy_policy.txt",
+      "bytes": 4730,
+      "sha256": "ed486d8ae3b443fee3390bc7f2d6f1739c80059a4c9723bfd82f802b09e39f97"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_01.mp3",
+      "bytes": 346796,
+      "sha256": "bf3e5bfa9125fba4901df823fa812e858aae4473d608bb510b77a08593e64ffd"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_02.mp3",
+      "bytes": 118325,
+      "sha256": "d21f4267c2bf79f9c449c696ee32b4e1e713a08a4843005205a5afb55ed489db"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_03.mp3",
+      "bytes": 153005,
+      "sha256": "1288bd8a658a769221a0fb05c2b3e4a16e15a37184c119954066eb1d458222e1"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_04.mp3",
+      "bytes": 299620,
+      "sha256": "001ba347d0774e10bb83ad7125e965050540847522b28934210ab8dfa24ce29a"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_05.mp3",
+      "bytes": 371319,
+      "sha256": "4b728d33aabaa4239139d3e2f86a07914b5005b17180d7189f6fd8f2be3123ea"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_06.mp3",
+      "bytes": 196460,
+      "sha256": "77568e836346e0e84b7eec8a5c9af78a3c889c4a575ba582e4653ac0cb006d8d"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_07.mp3",
+      "bytes": 142894,
+      "sha256": "25483e1f790ed613af1655109179afdb8dae0f154a2a9df655889cbae6facea1"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_08.mp3",
+      "bytes": 48472,
+      "sha256": "66993e6272d4d3279210637f39b6ec5942b2973e451572e107bc21ca2c5f3955"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_09.mp3",
+      "bytes": 75266,
+      "sha256": "710d6ab9fae50c6290f41fdd823e3345b64d19712301c5d22e1f13be100bd718"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_10.mp3",
+      "bytes": 123884,
+      "sha256": "90e88452b260672ff3e98e0abf950ff0eea9bae8d258423bbad982a2f150799e"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_11.mp3",
+      "bytes": 64490,
+      "sha256": "8606007201c3679232d6d025cc219648bcb670be618801f7644e2ac8ca67bec2"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_12.mp3",
+      "bytes": 349517,
+      "sha256": "22170c14fc669658d87c6d9d5be8634fbde90b432be093ab99a37a42add2352e"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_13.mp3",
+      "bytes": 92063,
+      "sha256": "cbccd01a4e14daa15d8a7fdbe81c19ca8f129491c9f3677bc6e37f7322e7df85"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_14.mp3",
+      "bytes": 253862,
+      "sha256": "0e5f788bbcce000aeda5e093c9a5616768c7b48686f3e8d5d16177faa3fbe4e8"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_15.mp3",
+      "bytes": 86416,
+      "sha256": "8f84e5d5d4f0e8c98f9761f574ea137831c0e93d818ec01ccd37431aabba1790"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_16.mp3",
+      "bytes": 72902,
+      "sha256": "6a95d8d26858c032f37000edc50a3bb0c38ebcf60fab76a306ac15e85a758eb1"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_17.mp3",
+      "bytes": 937942,
+      "sha256": "d61db8fe037590ea20552c54bedb9e3896f88340a571e42fc980f30517e69803"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_18.mp3",
+      "bytes": 313380,
+      "sha256": "8e55b30677ed83234d18b8267dfc5b8c9dfd2318df1ca12c4d918d78c5f34dd3"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_19.mp3",
+      "bytes": 28719,
+      "sha256": "35f070deb610d98a7bf8a24668407b9f27844dba7ab98a7a70b44448699a3d42"
+    },
+    {
+      "path": "app/src/main/res/raw/sample_20.mp3",
+      "bytes": 507789,
+      "sha256": "fff0f2db6312f2b4000a60d0ad8cba744b7a39ce2d2534d36d817836cff0bf5e"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "bytes": 82,
+      "sha256": "737e181471195aab2933bbc51228deaac85780a6682e5448a4aa1e5b058ad7b5"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "bytes": 587,
+      "sha256": "fd85ca044f61e35eee8703ccdcadb27acdbccdfbf26b4c238b7ff1c5c2cbc0cf"
+    },
+    {
+      "path": "app/src/main/res/xml/file_paths.xml",
+      "bytes": 183,
+      "sha256": "4fb0157c7e292249e3d1e8ba4409d20fd1346c13dbe8f3fdc1fd0bc088c7bd64"
+    },
+    {
+      "path": "build.gradle",
+      "bytes": 73,
+      "sha256": "4b08d3c261d317db5e5a5f7fa8ade50f361690e3b03fa86ee69a678f2a4b3a37"
+    },
+    {
+      "path": "privacy_reference.html",
+      "bytes": 5593,
+      "sha256": "59c391fe96dbe515e89e766982e1922bde5c4d526c62e5427e6de9e15d5321ef"
+    },
+    {
+      "path": "settings.gradle",
+      "bytes": 335,
+      "sha256": "d041a3993d1756e2e7a4ad83707e94f7c998f0a4cd35f2535c76990350dabec9"
+    }
+  ]
+}
