@@ -1,0 +1,147 @@
+name: Build DJ IMAN Full Native Sync Test APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'DJ_IMAN_3_4_NATIVE_FULL_SYNC_PORT_BUILD_READY.zip'
+      - '.github/workflows/build-full-native-sync-installable.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dj-iman-full-native-sync-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build separately installable full-native test APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract full-native source
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf extracted
+          mkdir extracted
+          unzip -q DJ_IMAN_3_4_NATIVE_FULL_SYNC_PORT_BUILD_READY.zip -d extracted
+          test -f extracted/DJ_IMAN_3_4_NATIVE_ANDROID/app/build.gradle
+          test -f extracted/DJ_IMAN_3_4_NATIVE_ANDROID/settings.gradle
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses >/dev/null || true
+
+      - name: Install Android SDK, NDK and CMake
+        run: |
+          sdkmanager \
+            'platform-tools' \
+            'platforms;android-35' \
+            'build-tools;35.0.0' \
+            'ndk;27.0.12077973' \
+            'cmake;3.22.1'
+
+      - name: Set up Gradle 8.11.1
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.11.1'
+
+      # Public TEST signing key only. Never use this key for Play Store release signing.
+      - name: Install stable DJ IMAN test signing key
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.android"
+          echo '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' | base64 -d > "$HOME/.android/debug.keystore"
+          chmod 600 "$HOME/.android/debug.keystore"
+          keytool -list -keystore "$HOME/.android/debug.keystore" \
+            -storepass 'djiman-test-2026' -alias djiman_native_test >/dev/null
+
+      - name: Configure separate test package and stable debug signing
+        shell: bash
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: |
+          set -euo pipefail
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          p = Path('app/build.gradle')
+          s = p.read_text()
+          needle = "    defaultConfig {\n"
+          if needle not in s:
+              raise SystemExit('defaultConfig block not found')
+          signing = """    signingConfigs {
+              nativeTest {
+                  storeFile file(System.getProperty('user.home') + '/.android/debug.keystore')
+                  storePassword 'djiman-test-2026'
+                  keyAlias 'djiman_native_test'
+                  keyPassword 'djiman-test-2026'
+              }
+          }
+
+          """
+          s = s.replace(needle, signing + needle, 1)
+          anchor = "    buildFeatures {\n"
+          if anchor not in s:
+              raise SystemExit('buildFeatures block not found')
+          build_types = """    buildTypes {
+              debug {
+                  applicationIdSuffix '.nativefullsync'
+                  versionNameSuffix '-nativefullsync-test'
+                  signingConfig signingConfigs.nativeTest
+              }
+          }
+
+          """
+          s = s.replace(anchor, build_types + anchor, 1)
+          p.write_text(s)
+
+          manifest = Path('app/src/main/AndroidManifest.xml')
+          m = manifest.read_text()
+          m = m.replace('android:label="DJ IMAN 3.4 Advance"',
+                        'android:label="DJ IMAN Native Test"')
+          manifest.write_text(m)
+          PYCODE
+
+      - name: Build full-native APK
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
+
+      - name: Verify installability, signature and package
+        shell: bash
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: |
+          set -euo pipefail
+          APK='app/build/outputs/apk/debug/app-debug.apk'
+          test -s "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/35.0.0/zipalign" -c -P 16 -v 4 "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/35.0.0/aapt" dump badging "$APK" | head -20
+          mkdir -p dist
+          cp "$APK" 'dist/DJ-IMAN-3.4-Full-Native-Sync-Test.apk'
+          sha256sum 'dist/DJ-IMAN-3.4-Full-Native-Sync-Test.apk' | tee 'dist/DJ-IMAN-3.4-Full-Native-Sync-Test.apk.sha256'
+
+      - name: Upload installable APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: DJ-IMAN-3.4-Full-Native-Sync-Test-APK
+          path: |
+            extracted/DJ_IMAN_3_4_NATIVE_ANDROID/dist/DJ-IMAN-3.4-Full-Native-Sync-Test.apk
+            extracted/DJ_IMAN_3_4_NATIVE_ANDROID/dist/DJ-IMAN-3.4-Full-Native-Sync-Test.apk.sha256
+          if-no-files-found: error
+          retention-days: 30
