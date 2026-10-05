@@ -1,0 +1,99 @@
+name: Build DJ IMAN Full Native Sync APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'DJ_IMAN_3_4_NATIVE_FULL_SYNC_PORT_BUILD_READY.zip'
+      - '.github/workflows/build-full-native-sync.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dj-iman-full-native-sync-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-debug-apk:
+    name: Build full-native DJ IMAN APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract full-native source package
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP='DJ_IMAN_3_4_NATIVE_FULL_SYNC_PORT_BUILD_READY.zip'
+          test -s "$ZIP"
+          rm -rf extracted
+          mkdir -p extracted
+          unzip -q "$ZIP" -d extracted
+          PROJECT_DIR='extracted/DJ_IMAN_3_4_NATIVE_ANDROID'
+          test -f "$PROJECT_DIR/settings.gradle"
+          test -f "$PROJECT_DIR/app/build.gradle"
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          echo "Building source from: $PROJECT_DIR"
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses >/dev/null || true
+
+      - name: Install pinned Android SDK, NDK and CMake
+        run: |
+          sdkmanager \
+            'platform-tools' \
+            'platforms;android-35' \
+            'build-tools;35.0.0' \
+            'ndk;27.0.12077973' \
+            'cmake;3.22.1'
+
+      - name: Set up Gradle 8.11.1
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Print build environment
+        run: |
+          java -version
+          gradle --version
+          echo "PROJECT_DIR=$PROJECT_DIR"
+
+      - name: Build DJ IMAN full-native debug APK
+        run: gradle --project-dir "$PROJECT_DIR" --no-daemon --stacktrace :app:assembleDebug
+
+      - name: Verify generated APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK="$PROJECT_DIR/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          mkdir -p dist
+          cp "$APK" 'dist/DJ-IMAN-3.4-Full-Native-Sync-debug.apk'
+          sha256sum 'dist/DJ-IMAN-3.4-Full-Native-Sync-debug.apk' | tee 'dist/DJ-IMAN-3.4-Full-Native-Sync-debug.apk.sha256'
+          ls -lh dist/
+
+      - name: Upload installable APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: DJ-IMAN-3.4-Full-Native-Sync-APK
+          path: |
+            dist/DJ-IMAN-3.4-Full-Native-Sync-debug.apk
+            dist/DJ-IMAN-3.4-Full-Native-Sync-debug.apk.sha256
+          if-no-files-found: error
+          retention-days: 30
