@@ -1,0 +1,86 @@
+name: Build DJ IMAN Full Native Sync Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract new full-native source
+        run: |
+          rm -rf extracted
+          mkdir extracted
+          unzip -q DJ_IMAN_3_4_NATIVE_FULL_SYNC_PORT_BUILD_READY.zip -d extracted
+          test -f extracted/DJ_IMAN_3_4_NATIVE_ANDROID/app/build.gradle
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: android-actions/setup-android@v4
+
+      - name: Install Android build tools
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager 'platform-tools' 'platforms;android-35' 'build-tools;35.0.0' 'ndk;27.0.12077973' 'cmake;3.22.1'
+
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Make this a separately installable test app
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('app/build.gradle')
+          s = p.read_text()
+          anchor = '    buildFeatures {\n'
+          if anchor not in s:
+              raise SystemExit('buildFeatures block not found')
+          block = '''    buildTypes {
+              debug {
+                  applicationIdSuffix '.nativefullsync'
+                  versionNameSuffix '-nativefullsync-test'
+              }
+          }
+
+          '''
+          s = s.replace(anchor, block + anchor, 1)
+          p.write_text(s)
+
+          m = Path('app/src/main/AndroidManifest.xml')
+          t = m.read_text().replace('android:label="DJ IMAN 3.4 Advance"', 'android:label="DJ IMAN Native Test"')
+          m.write_text(t)
+          PY
+
+      - name: Build APK
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
+
+      - name: Verify APK
+        working-directory: extracted/DJ_IMAN_3_4_NATIVE_ANDROID
+        run: |
+          APK='app/build/outputs/apk/debug/app-debug.apk'
+          test -s "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+          mkdir -p dist
+          cp "$APK" dist/DJ-IMAN-Full-Native-Sync-Test.apk
+          sha256sum dist/DJ-IMAN-Full-Native-Sync-Test.apk > dist/DJ-IMAN-Full-Native-Sync-Test.apk.sha256
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: DJ-IMAN-Full-Native-Sync-Test-APK
+          path: |
+            extracted/DJ_IMAN_3_4_NATIVE_ANDROID/dist/DJ-IMAN-Full-Native-Sync-Test.apk
+            extracted/DJ_IMAN_3_4_NATIVE_ANDROID/dist/DJ-IMAN-Full-Native-Sync-Test.apk.sha256
+          retention-days: 30
