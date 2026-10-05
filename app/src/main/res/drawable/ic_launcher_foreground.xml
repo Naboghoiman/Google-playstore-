@@ -1,0 +1,69 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54">
+        <!-- Turntable Platter Outer Rim -->
+        <path
+            android:fillColor="#1E2330"
+            android:pathData="M 54, 23 A 31,31 0 1,0 54,85 A 31,31 0 1,0 54,23" />
+        <!-- Strobe ring -->
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#00E5FF"
+            android:strokeWidth="1.2"
+            android:pathData="M 54, 25 A 29,29 0 1,0 54,83 A 29,29 0 1,0 54,25" />
+        <!-- Vinyl Body -->
+        <path
+            android:fillColor="#14171F"
+            android:pathData="M 54, 27 A 27,27 0 1,0 54,81 A 27,27 0 1,0 54,27" />
+        <!-- Vinyl Grooves -->
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#252C3D"
+            android:strokeWidth="0.75"
+            android:pathData="M 54, 31 A 23,23 0 1,0 54,77 A 23,23 0 1,0 54,31" />
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#202636"
+            android:strokeWidth="0.6"
+            android:pathData="M 54, 35 A 19,19 0 1,0 54,73 A 19,19 0 1,0 54,35" />
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#252C3D"
+            android:strokeWidth="0.75"
+            android:pathData="M 54, 39 A 15,15 0 1,0 54,69 A 15,15 0 1,0 54,39" />
+        <!-- Center Label Core -->
+        <path
+            android:fillColor="#FF2A55"
+            android:pathData="M 54, 44 A 10,10 0 1,0 54,64 A 10,10 0 1,0 54,44" />
+        <!-- Center Spindle Ring -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M 54, 51 A 3,3 0 1,0 54,57 A 3,3 0 1,0 54,51" />
+        <path
+            android:fillColor="#0D1117"
+            android:pathData="M 54, 52.5 A 1.5,1.5 0 1,0 54,55.5 A 1.5,1.5 0 1,0 54,52.5" />
+        <!-- LED Cue Position Marker / Strobe Marker -->
+        <path
+            android:fillColor="#00E5FF"
+            android:pathData="M 53, 27.5 h2 v5.5 h-2 z" />
+        <!-- Stylish DJ Tonearm -->
+        <path
+            android:fillColor="#E0E6ED"
+            android:pathData="M 77,29 a 3,3 0 1,0 0,6 a 3,3 0 1,0 0,-6 z" />
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#E0E6ED"
+            android:strokeWidth="1.6"
+            android:strokeLineCap="round"
+            android:pathData="M 77,32 L 73,46 L 66,54 L 62,56" />
+        <!-- Cartridge / Head-shell -->
+        <path
+            android:fillColor="#FF9100"
+            android:pathData="M 60,54.5 L 64,56.5 L 62.5,59.5 L 58.5,57.5 Z" />
+    </group>
+</vector>

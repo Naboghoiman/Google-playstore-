@@ -1,0 +1,6 @@
+{
+  "name": "DJ IMAN 3.4",
+  "description": "Professional Dual-Deck DJ Mixing Studio with Interactive Platters, Beatgrid, Mixer, Performance Pads, Automix and Recording.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
